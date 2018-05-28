@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block content %}
+<article>
+<header>
+	<h1> {{post.title}} </h1>
+		<p>
+		Posteado el:
+		<time datetime="{{post.created|date:"c"}}">
+			{{post.created | date}}
+		</time>
+		</p>
+</header>
+<p class="description">
+	{{post.description}}
+</p>
+<div>
+{{post.content | safe}}
+</div>
+<a class="btn btn-default" href="{% url 'post_edita' slug=post.slug %}">editar</a>
+</article>
+{% endblock %}

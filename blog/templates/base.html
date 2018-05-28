@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static	%}
+	<meta charset="utf-8">
+	<title>
+		{% block title %}{% endblock %}
+	</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'tuktuk.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'tuktuk.theme.default.css' %}">
+	{% block extrahead %}
+	{% endblock %}
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{% endblock %}
+
+
+{% block title %}Tirate un post{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="column_12 bck color">
+			<h1>Nuevo Post</h1>
+		</div>			
+	</div>
+	<div class="row margin-top">
+		<div class="column_12 bck light padding">
+			<form method="post">{% csrf_token %}
+		    	<fieldset>
+	    		{{ form.media }}
+		        {{ form.as_p }}
+		        </fieldset>
+		        <button type="submit" class="button">Postear</button>
+		    </form>
+		</div>
+    </div>
+{% endblock %}
